@@ -28,4 +28,4 @@ var burger = {
     }
 };
 // Export at the end of the burger.js file.
-module.export = burger;
+module.exports = burger;
