@@ -10,7 +10,7 @@ var burger = require("../models/burger.js");
 
 // Create the router for the app, and export the router at the end of your file.
 router.get("/", function(req, res) {
-    burger.all(function(data) {
+    burger.select(function(data) {
       var hbsObject = {
         burgers: data
       };
@@ -31,7 +31,7 @@ router.post("/api/burgers", function(req, res) {
 router.put("/api/burgers/:id", function(req, res) {
     var condition = "id = " + req.params.id;
   
-    console.log("condition", condition);
+    console.log("condition: ", condition);
   
     burger.update({
         devoured: req.body.devoured
