@@ -1,7 +1,18 @@
-# burger
-In this assignment, you'll create a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!). Be sure to follow the MVC design pattern; use Node and MySQL to query and route data in your app, and Handlebars to generate your HTML.
+# Burger
 
-# DB Setup
+## Description
+This is a restaurant app that lets users input the names of burgers they'd like to eat. It's basically a logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!). It follows the MVC design pattern while using Node and MySQL to query and route data, and Handlebars to generate HTML.
+Whenever a user submits a burger's name, your app will display the burger on the left side of the page -- waiting to be devoured.
+Each burger in the waiting area also has a "Devour it!" button. When the user clicks it, the burger will move to the right side of the page.
+The app stores every burger in a database, whether devoured or not.
+
+## Deployed App
+You can view this deployed project by clicking <a href="#">HERE</a>
+
+To set up this application locally on your computer, perform the following steps:
+
+## Getting Set Up
+### DB Setup
 Inside your burger directory, create a folder named db.
 In the db folder, create a file named schema.sql. Write SQL queries this file that do the following:
 
@@ -23,7 +34,7 @@ With the mysql> command line tool running, enter the command source schema.sql. 
 Now insert the entries you defined in seeds.sql by running the file: source seeds.sql.
 Close out of the MySQL command line tool: exit.
 
-# Config Setup
+### Config Setup
 Inside your burger directory, create a folder named config.
 Create a connection.js file inside config directory.
 Inside the connection.js file, setup the code to connect Node to MySQL.
@@ -39,14 +50,14 @@ updateOne()
 
 Export the ORM object in module.exports.
 
-# Model setup
+### Model setup
 Inside your burger directory, create a folder named models.
 In models, make a burger.js file.
 Inside burger.js, import orm.js into burger.js
 Also inside burger.js, create the code that will call the ORM functions using burger specific input for the ORM.
 Export at the end of the burger.js file.
 
-# Controller setup
+### Controller setup
 Inside your burger directory, create a folder named controllers.
 In controllers, create the burgers_controller.js file.
 Inside the burgers_controller.js file, import the following:
@@ -56,7 +67,7 @@ burger.js
 
 Create the router for the app, and export the router at the end of your file.
 
-# View setup
+### View setup
 Inside your burger directory, create a folder named views.
 Create the index.handlebars file inside views directory.
 Create the layouts directory inside views directory.
@@ -64,3 +75,20 @@ Create the main.handlebars file inside layouts directory.
 Setup the main.handlebars file so it's able to be used by Handlebars.
 Setup the index.handlebars to have the template that Handlebars can render onto.
 Create a button in index.handlebars that will submit the user input into the database.#$
+
+## Technologies Used
+### Front-end Technologies 
+* HTML
+* CSS
+* Handlebars
+* Bootstrap
+* Javascript
+* jQuery
+
+### Back-end Technologies
+* Node.js
+* MySQL
+* Express
+
+## Creator
+[Abby Nielson](https://github.com/aanielson) <br>
