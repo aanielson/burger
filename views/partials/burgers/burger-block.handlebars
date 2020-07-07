@@ -1,9 +1,13 @@
-<li>
-	{{burger_name}}
-
-	<button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
-		{{#if devoured}}MAKE ANOTHER!{{else}}DEVOUR!{{/if}}
-	</button>
-
-	<button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
-</li>
+<div class="col-md-6">
+	<div class="card mb-4">
+		<div class="card-header bg-warning">
+			<h5>{{burger_name}}</h5>
+		</div>
+		<div class="card-body bg-light">
+			<button class="change-devoured bg-primary" data-id="{{id}}" data-newdevoured="{{devoured}}">
+				{{#if devoured}}MAKE ANOTHER!{{else}}DEVOUR!{{/if}}
+			</button>
+			<button class="delete-burger bg-danger" data-id="{{this.id}}">DELETE!</button>
+		</div>
+	</div>
+</div>
