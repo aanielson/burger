@@ -8,7 +8,8 @@ var router = express.Router();
 // Import the model (burger.js) to use its database functions.
 var burger = require("../models/burger.js");
 
-// Create the router for the app, and export the router at the end of your file.
+// reate the router for the app, and export the router at the end of your file.
+//=======================method for getting all burgers=======================
 router.get("/", function (req, res) {
   burger.select(function (data) {
     var hbsObject = {
@@ -18,48 +19,43 @@ router.get("/", function (req, res) {
     res.render("index", hbsObject);
   });
 });
+
+//=======================method for creating a new burger=======================
 router.post("/api/burgers", function (req, res) {
   burger.create([
     "burger_name", "devoured"
   ], [
     req.body.burger_name, req.body.devoured
   ], function (result) {
-    // Send back the ID of the new quote
     //redirect to /
     res.redirect("/");
   });
 });
+
+//=======================method for updating an existing burger=======================
 router.put("/api/burgers/:id", function (req, res) {
   var condition = "id = " + req.params.id;
-  console.log(req.body.devoured);
+  var devouredStatus = req.body.devoured;
+  console.log(devouredStatus);
   console.log("condition: ", condition);
-  if (!req.body.devoured) {
+  if (!devouredStatus) {
     burger.update({
       devoured: true
     }, condition, function (result) {
-      if (result.changedRows == 0) {
-        console.log("If is happening");
-        // If no rows were changed, then the ID must not exist, so 404
-        res.status(200);
-      } else {
-        res.status(200);
-      }
+      //redirect to /
+      res.redirect("/");
     });
   } else {
     burger.update({
       devoured: false
     }, condition, function (result) {
-      if (result.changedRows == 0) {
-        console.log("If is happening");
-        // If no rows were changed, then the ID must not exist, so 404
-        res.status(200);
-      } else {
-        res.status(200);
-      }
+        //redirect to /
+        res.redirect("/");
     });
   }
 });
 
+//=======================method for deleting a burger=======================
 router.delete("/api/burgers/:id", function (req, res) {
   var condition = "id = " + req.params.id;
 
@@ -68,7 +64,7 @@ router.delete("/api/burgers/:id", function (req, res) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
     } else {
-      res.status(200).end();
+      res.redirect("/");
     }
   });
 });
