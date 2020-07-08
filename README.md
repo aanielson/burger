@@ -7,7 +7,7 @@ Each burger in the waiting area also has a "Devour" button. When the user clicks
 The app stores every burger in a database, whether devoured or not.
 
 ## Deployed App
-You can view this deployed project by clicking <a href="#">HERE</a>
+You can view this deployed project by clicking <a href="https://sheltered-shelf-74732.herokuapp.com/">HERE</a>
 
 To set up this application locally on your computer, perform the following steps:
 
