@@ -4,9 +4,11 @@
 			<h5>{{burger_name}}</h5>
 		</div>
 		<div class="card-body bg-light">
+			{{#if devoured}}{{else}}
 			<button class="change-devoured bg-primary" data-id="{{id}}" data-newdevoured="{{devoured}}">
-				{{#if devoured}}MAKE ANOTHER!{{else}}DEVOUR!{{/if}}
+				DEVOUR!
 			</button>
+			{{/if}}
 			<button class="delete-burger bg-danger" data-id="{{this.id}}">DELETE!</button>
 		</div>
 	</div>
