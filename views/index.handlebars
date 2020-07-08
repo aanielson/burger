@@ -7,17 +7,6 @@ Create a button in index.handlebars that will submit the user input into the dat
     </div>
 </div>
 
-<div class="container burger-list">
-  <h2><strong>Devoured Burgers</strong></h2>
-  <div class="row">
-    {{#each burgers}}
-    {{#if devoured}}
-    {{> burgers/burger-block devoured=true}}
-    {{/if}}
-    {{/each}}
-  </div>
-</div>
-
 <div class="container burger-list mt-1">
   <h2><strong>Ready to Devour!</strong></h2>
   <div class="row">
@@ -25,6 +14,17 @@ Create a button in index.handlebars that will submit the user input into the dat
     {{#unless devoured}}
     {{> burgers/burger-block devoured=false}}
     {{/unless}}
+    {{/each}}
+  </div>
+</div>
+
+<div class="container burger-list">
+  <h2><strong>Devoured Burgers</strong></h2>
+  <div class="row">
+    {{#each burgers}}
+    {{#if devoured}}
+    {{> burgers/burger-block devoured=true}}
+    {{/if}}
     {{/each}}
   </div>
 </div>
