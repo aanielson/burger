@@ -35,24 +35,13 @@ router.post("/api/burgers", function (req, res) {
 //=======================method for updating an existing burger=======================
 router.put("/api/burgers/:id", function (req, res) {
   var condition = "id = " + req.params.id;
-  var devouredStatus = req.body.devoured;
-  console.log(devouredStatus);
-  console.log("condition: ", condition);
-  if (!devouredStatus) {
-    burger.update({
-      devoured: true
-    }, condition, function (result) {
-      //redirect to /
-      res.redirect("/");
-    });
-  } else {
-    burger.update({
-      devoured: false
-    }, condition, function (result) {
-        //redirect to /
-        res.redirect("/");
-    });
-  }
+  burger.update(
+    condition, function (result) {
+      console.log(result);
+      res.sendStatus(200);
+      
+    }
+  )
 });
 
 //=======================method for deleting a burger=======================
@@ -64,7 +53,7 @@ router.delete("/api/burgers/:id", function (req, res) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
     } else {
-      res.redirect("/");
+      res.sendStatus(200);
     }
   });
 });

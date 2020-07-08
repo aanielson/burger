@@ -5,27 +5,14 @@ $(document).ready(function() {
     console.log("The button click worked");
     
     var burgerId = $(this).attr('data-id');
-    var newDevoured = $(this).attr('data-newdevoured');
-    console.log(newDevoured);
-    if (!newDevoured) {
       $.ajax({
         url: "/api/burgers/" + burgerId,
-        method: "PUT",
-        data: {devoured: newDevoured}
+        method: "PUT"
       }).then(function(){
         console.log("Then is working");
-        // location.reload();
+        window.location.reload();
       })
-    } else {
-      $.ajax({
-        url: "/api/burgers/" + burgerId,
-        method: "PUT",
-        data: {devoured: newDevoured}
-      }).then(function(){
-        console.log("Then is working");
-        // location.reload();
-      })
-    }
+    
     console.log(burgerId);
     //update .newdevoured to true if false and false if true
   }); 
@@ -39,6 +26,7 @@ $(document).ready(function() {
       method: "DELETE"
     }).then(function() {
       console.log("Burger successfully removed")
+      window.location.reload();
     })
 
   })

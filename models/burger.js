@@ -16,8 +16,8 @@ var burger = {
             callBack(res);
         });
     },
-    update: function(objColVals, condition, callBack) {
-        orm.update("burgers", objColVals, condition, function(res) {
+    update: function(condition, callBack) {
+        orm.update("burgers", {devoured : true}, condition, function(res) {
             callBack(res);
         });
     },
